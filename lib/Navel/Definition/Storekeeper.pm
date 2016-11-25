@@ -11,9 +11,9 @@ use Navel::Base;
 
 use parent 'Navel::Base::Definition';
 
-use JSON::Validator;
+use JSON::Validator::OpenAPI;
 
-use Navel::API::Swagger2::Dispatcher;
+use Navel::API::OpenAPI::Dispatcher;
 
 #-> methods
 
@@ -21,12 +21,12 @@ sub json_validator {
     my $class = shift;
 
     state $json_validator = JSON::Validator->new->schema(
-        Navel::API::Swagger2::Dispatcher->new->expand->api_spec->get('/definitions/storekeeper')
+        Navel::API::OpenAPI::Dispatcher->new->schema->get('/definitions/storekeeper')
     );
 }
 
 BEGIN {
-    __PACKAGE__->_create_setters(@{__PACKAGE__->json_validator->schema->data->{required}});
+    __PACKAGE__->_create_setters(@{__PACKAGE__->json_validator->schema->get('/allOf/1/required')});
 }
 
 sub validate {
