@@ -13,8 +13,6 @@ use parent 'Navel::Base::Definition';
 
 use JSON::Validator::OpenAPI;
 
-use URI;
-
 use Navel::API::OpenAPI::Dispatcher;
 
 #-> methods
