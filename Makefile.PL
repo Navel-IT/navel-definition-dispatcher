@@ -1,5 +1,5 @@
 # Copyright (C) 2015-2017 Yoann Le Garff, Nicolas Boquet and Yann Le Bras
-# navel-definition-storekeeper is licensed under the Apache License, Version 2.0
+# navel-definition-dispatcher is licensed under the Apache License, Version 2.0
 
 #-> BEGIN
 
@@ -15,9 +15,9 @@ use ExtUtils::MakeMaker;
 my $min_perl_version = '5.18.0';
 
 WriteMakefile(
-    NAME => 'Navel::Definition::Storekeeper',
-    VERSION_FROM => 'lib/Navel/Definition/Storekeeper.pm',
-    ABSTRACT => 'navel-definition-storekeeper',
+    NAME => 'Navel::Definition::Dispatcher',
+    VERSION_FROM => 'lib/Navel/Definition/Dispatcher.pm',
+    ABSTRACT => 'navel-definition-dispatcher',
     AUTHOR => 'Yoann Le Garff, Nicolas Boquet and Yann Le Bras',
     LICENSE => 'apache_2_0',
     META_MERGE => {
@@ -26,7 +26,7 @@ WriteMakefile(
         },
         resources => {
             license => 'http://www.apache.org/licenses/LICENSE-2.0.html',
-            repository => 'http://github.com/Navel-IT/navel-definition-storekeeper'
+            repository => 'http://github.com/Navel-IT/navel-definition-dispatcher'
         }
     },
     MIN_PERL_VERSION => $min_perl_version,
